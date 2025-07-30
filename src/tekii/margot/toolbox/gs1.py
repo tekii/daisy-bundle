@@ -47,7 +47,7 @@ class GTIN(_Base):
 
 
 class GLN(_Base):
-    """GS1 GTIN"""
+    """GS1 GLN"""
 
     RE = re.compile(r"^(\d{12})(\d)$")
 
