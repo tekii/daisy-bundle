@@ -7,11 +7,11 @@ __all__ = ["GTIN", "GLN"]
 
 
 class _Base:  # pylint: disable=R0903
-    def __init__(self, digits, re_) -> None:
+    def __init__(self, digits: str, re_: re.Pattern[str]) -> None:
         match = re_.match(digits)
         if match:
-            self.digits = match[1]
-            self.parity = match[2]
+            self.digits: str = match[1]
+            self.parity: str = match[2]
         else:
             raise ValueError
 
@@ -33,26 +33,28 @@ class _Base:  # pylint: disable=R0903
 
         return True
 
+    def __str__(self) -> str:
+        return self.digits + self.parity
+
 
 class GTIN(_Base):
     """GS1 GTIN"""
 
-    RE = re.compile(r"^(\d?\d{12})(\d)$")
+    RE: re.Pattern[str] = re.compile(r"^(\d?\d{12})(\d)$")
 
-    def __init__(self, digits) -> None:
+    def __init__(self, digits: str) -> None:
         super().__init__(digits, GTIN.RE)
 
-    def __str__(self):
-        return (self.digits + self.parity).zfill(14)
+    def __str__(self) -> str:
+        return super().__str__().zfill(14)
 
 
 class GLN(_Base):
     """GS1 GLN"""
 
-    RE = re.compile(r"^(\d{12})(\d)$")
+    RE: re.Pattern[str] = re.compile(r"^(\d{12})(\d)$")
 
-    def __init__(self, digits) -> None:
+    def __init__(self, digits: str) -> None:
         super().__init__(digits, GLN.RE)
 
-    def __str__(self):
-        return self.digits + self.parity
+
