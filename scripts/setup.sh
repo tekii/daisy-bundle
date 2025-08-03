@@ -5,7 +5,7 @@ set -e
 PACKAGE_NAME=bundle
 SLEEP=3
 
-source ../../scripts/common.sh
+source ./scripts/common.sh
 
 # create the account to run the build 
 gcloud \
@@ -40,9 +40,9 @@ gcloud \
     --name="bundle-trigger${ATTEMPT_SUFFIX}" \
     --service-account="${BUILD_ACCOUNT}" \
     --repo-owner="tekii" \
-    --repo-name="daisy" \
-    --branch-pattern="^bundle$" \
-    --included-files="bundle_root/**" \
-    --ignored-files="bundle_root/scripts/**" \
-    --build-config="bundle_root/cloudbuild.yaml" \
+    --repo-name="daisy-bundle" \
+    --branch-pattern="^deploy$" \
+    --included-files="./**" \
+    --ignored-files="./scripts/**" \
+    --build-config="./cloudbuild.yaml" \
     --substitutions="_PYTHON_REPO_URL=${PYTHON_REPO_URL}"

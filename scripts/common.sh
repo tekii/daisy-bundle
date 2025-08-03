@@ -15,7 +15,7 @@ fi
 BUILD_ACCOUNT_EMAIL="${BUILD_ACCOUNT_NAME}@${PROJECT_ID}.iam.gserviceaccount.com"
 BUILD_ACCOUNT="projects/${PROJECT_ID}/serviceAccounts/${BUILD_ACCOUNT_EMAIL}"
 # repos
-PYTHON_REPO_NAME="margot"
+PYTHON_REPO_NAME="daisy"
 PYTHON_REPO="projects/${PROJECT_ID}/locations/${LOCATION}/repositories/${PYTHON_REPO_NAME}"
 PYTHON_REPO_URL=$(gcloud artifacts repositories describe $PYTHON_REPO --format="value(registryUri)")
 DOCKER_REPO="projects/${PROJECT_ID}/locations/${LOCATION}/repositories/images"
