@@ -41,8 +41,8 @@ gcloud \
     --service-account="${BUILD_ACCOUNT}" \
     --repo-owner="tekii" \
     --repo-name="daisy-bundle" \
-    --branch-pattern="^deploy$" \
-    --included-files="./**" \
-    --ignored-files="./scripts/**" \
-    --build-config="./cloudbuild.yaml" \
+    --branch-pattern="^deploy-to-daisy-tekii$" \
+    --included-files="*" \
+    --ignored-files="scripts/**" \
+    --build-config="cloudbuild.yaml" \
     --substitutions="_PYTHON_REPO_URL=${PYTHON_REPO_URL}"
