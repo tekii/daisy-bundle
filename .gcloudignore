@@ -11,5 +11,4 @@ project.toml
 
 notes.txt
 
-#!include:../.gitignore
 #!include:.gitignore
