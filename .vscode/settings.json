@@ -1,4 +1,13 @@
 {
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true
+    },
+    "black-formatter.args": [
+        "--line-length",
+        "100",
+        "--preview"
+    ],
     "python.testing.pytestEnabled": true,
     "python.testing.unittestEnabled": false,
     "telemetry.editStats.enabled": false,
@@ -7,12 +16,15 @@
     "cloudcode.project": "daisy-tekii",
     "cloudcode.enableGkeAutopilotSupport": false,
     "cloudcode.enableMinikubeGcpAuthPlugin": true,
+    "cloudcode.enable1stPartyAuth": false,
     "geminicodeassist.enableTelemetry": false,
     "geminicodeassist.codeGenerationPaneViewEnabled": true,
     "geminicodeassist.project": "daisy-tekii",
     "geminicodeassist.updateChannel": "Default",
     "geminicodeassist.verboseLogging": false,
     "editor.fontSize": 16,
+    "editor.formatOnSave": true,
+    "editor.maxTokenizationLineLength": 200000,
     "pylint.args": [
         "--disable=W0212",
         "--disable=C0116",
@@ -29,6 +41,6 @@
     ],
     "isort.check": true,
     "flake8.args": [
-        "--max-line-length=120"
+        "--max-line-length=100"
     ],
 }
