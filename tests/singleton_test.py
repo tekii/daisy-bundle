@@ -1,4 +1,6 @@
-from tekii.margot.toolbox.singleton import Singleton
+from tekii.margot.toolbox.singleton import Singleton  # type: ignore
+
+
 
 
 def test_singleton():

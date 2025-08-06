@@ -1,7 +1,7 @@
 import datetime
 
 
-from tekii.margot.build_version import generate
+from tekii.margot.build_version import generate  # type: ignore
 
 major_valid_since = {
     0: datetime.datetime(
